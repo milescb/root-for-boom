@@ -3,8 +3,8 @@ FROM almalinux:9
 LABEL maintainer.name="Miles Cochran-Branson"
 LABEL maintainer.email="miles.cb@cern.ch"
 
-ARG ROOT_VERSION=6.18.00
-ARG PYTHON_VERSION=2.7
+ARG ROOT_VERSION=6.28.00
+ARG PYTHON_VERSION=3.9
 
 # Install dependencies
 RUN yum install -y epel-release
@@ -31,22 +31,6 @@ RUN cmake3 -DCMAKE_INSTALL_PREFIX=../root_install -DPYTHON_VERSION=${PYTHON_VERS
 RUN cmake3 --build . -- install -j4
 RUN source ../root_install/bin/thisroot.sh
 
-# Set environment variables
-#ENV ROOTSYS=/usr/local
-#ENV PATH=$ROOTSYS/bin:$PATH
-#ENV LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
-#ENV PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
-
 # Clean up
 RUN rm -rf ../root_build \
        && rm -rf ../root_src
-
-# install and source happy dependency
-#RUN git clone https://gitlab.cern.ch/ATauLeptonAnalysiS/HAPPy.git /happy
-#WORKDIR happy
-#RUN git checkout python2
-#RUN source setup.sh
-
-
-# Set default command to launch ROOT
-#CMD ["root"]
