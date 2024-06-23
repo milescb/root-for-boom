@@ -14,7 +14,7 @@ docker buildx build --platform linux/amd64 -t root:6.18-py2.7 root6.18.04-python
 
 ### Pull
 
-Pre-build versions can be found at `docker.io/milescb/root-for-boom`. To use these pull via:
+Pre-built versions can be found at `docker.io/milescb/root-for-boom`. To use these pull via:
 
 ```
 docker pull milescb/root-for-boom:<version>
@@ -34,8 +34,10 @@ docker run -it --rm --platform linux/amd64 \
 Once in the docker environment, setup for boom production:
 
 ```
-cd /happy && source setup.sh && cd ../boom \
-    && export BOOM_NTUPLE_PATH=../data
+cd /happy 
+source setup.sh 
+cd /boom
+export BOOM_NTUPLE_PATH=/data
 ```
 
 Now, run boom as before!
