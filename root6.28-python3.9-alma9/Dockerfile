@@ -11,14 +11,7 @@ RUN dnf install -y epel-release
 ## Required dependencies
 RUN dnf install -y git make cmake gcc-c++ gcc binutils \
     libX11-devel libXpm-devel libXft-devel libXext-devel openssl-devel \
-    xrootd-client-devel xrootd-libs-devel
-## Optional dependencies
-RUN dnf install -y gcc-gfortran pcre-devel \
-    mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mariadb-devel \
-    fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
-    avahi-compat-libdns_sd-devel openldap-devel python3-devel python3-numpy \
-    libxml2-devel gsl-devel readline-devel qt5-qtwebengine-devel \
-    R-devel R-Rcpp-devel R-RInside-devel
+    xrootd-client-devel xrootd-libs-devel python3-devel python3-numpy
 
 # Clone appropriate version of ROOT
 WORKDIR /root-project
