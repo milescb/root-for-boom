@@ -1,4 +1,3 @@
-#FROM centos/python-27-centos7:latest
 FROM centos:7
 
 LABEL maintainer.name="Miles Cochran-Branson"
@@ -41,6 +40,6 @@ ENV LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
 ENV PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
 
 # Clean up
-WORKDIR ../root-project
+WORKDIR /root-project
 RUN rm -rf ../root_build \
        && rm -rf ../root_src
