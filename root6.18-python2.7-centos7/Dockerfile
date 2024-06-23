@@ -24,9 +24,9 @@ R-devel R-Rcpp-devel R-RInside-devel
 
 # Clone appropriate version of ROOT
 WORKDIR /root-project
-# RUN git config --global http.postBuffer 1048576000
-# RUN git clone --branch v6-18-00-patches --depth=1 https://github.com/root-project/root.git /root_src
-COPY ~/root /root_src
+RUN git config --global http.postBuffer 1048576000
+RUN git clone --branch v6-18-00-patches --depth=1 https://github.com/root-project/root.git /root_src
+# COPY ~/root /root_src
 
 # Configure and build ROOT
 RUN mkdir root_build root_install 
