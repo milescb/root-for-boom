@@ -34,3 +34,5 @@ ENV PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
 WORKDIR /root-project
 RUN rm -rf ../root_build \
        && rm -rf ../root_src
+
+WORKDIR /boom

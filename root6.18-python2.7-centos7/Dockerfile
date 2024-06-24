@@ -13,13 +13,6 @@ RUN yum install -y python-devel.x86_64 numpy
 RUN yum install -y git make cmake3 gcc-c++ gcc binutils \
 libX11-devel libXpm-devel libXft-devel libXext-devel openssl-devel \
 xrootd-client-devel xrootd-libs-devel
-## Optional dependencies
-RUN yum install -y gcc-gfortran pcre-devel \
-mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
-fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
-avahi-compat-libdns_sd-devel openldap-devel \
-libxml2-devel gsl-devel readline-devel qt5-qtwebengine-devel \
-R-devel R-Rcpp-devel R-RInside-devel
 
 # Clone appropriate version of ROOT
 WORKDIR /root-project
@@ -42,3 +35,5 @@ ENV PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
 WORKDIR /root-project
 RUN rm -rf ../root_build \
        && rm -rf ../root_src
+
+WORKDIR /boom
